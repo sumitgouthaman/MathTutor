@@ -1,0 +1,49 @@
+body {
+    padding-top: 30px;
+    /*    background-color: #B6D7F2;*/
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+.reward-font {
+    font-family: 'Handlee', cursive;
+    font-size: 40px;
+    color: #B5022F;
+    font-weight:bold;
+}
+.game-title {
+    font-family: 'Handlee', cursive;
+    font-size: 45px;
+    color: white;
+    font-weight:bold;
+}
+.question {
+    font-family: 'Handlee', cursive;
+    font-size: 18em;
+    color: #FFFFFF;
+}
+.apple {
+    width: 50px;
+    height: 50px;
+}
+.blackboard {
+    /*    background-color:#1F631F;*/
+    background-image: url("../images/blackboard.jpg");
+    background-size: cover;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #4E0D0D;
+    border-radius: 15px;
+}
+/*
+.blackboard {
+    background-image: url("images/blackboard.jpg");
+    background-size: cover;
+}*/
+
+.blackboard-outer {
+    background-color: transparent;
+    border-width: 0px;
+}
+.answer-row {
+    padding-top: 10px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>MathTutor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mathtutor.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--Angular.js-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body ng-init="reloadPage()" ng-controller="mathtutor">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="images/apple.png" class="apple" ng-repeat="a in range(noOfApples) track by $index">
+            </div>
+            <div class="col-lg-5">
+                <div class="game-title">
+                    <p class="text-center">{{gametitle}}</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="pull-right reward-font">
+                    <img src="images/chocolate.png" class="apple">
+                    <span>{{noOfIceCreams}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="panel panel-default blackboard-outer">
+                <div class="panel-body blackboard">
+                    <p class="question text-center">{{question}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container answer-row">
+            <div class="row">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="answer" placeholder="Answer here!!!!" ng-model="userAnswer">
+                </div>
+                <div class="col-lg-1">
+                    <button class="btn btn-primary" ng-click="onSubmitAnswer()" id="submitbutton">Submit</button>
+                </div>
+                <div class="col-lg-1">
+                    <button class="btn btn-danger" ng-click="skipQuestion()">Skip</button>
+                </div>
+                <div class="col-lg-1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modals-->
+    <div class="modal fade" id="lost-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Womp Womp :(</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>You lost!</h2>
+                    <p>Try again maybe....</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="reloadPage()">Try Again</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script>
+        $("#answer").keyup(function(event) {
+            if (event.keyCode == 13) {
+                $("#submitbutton").click();
+            }
+        });
+    </script>
+</body>
+
+</html>
