@@ -20,15 +20,15 @@
 <body ng-init="reloadPage()" ng-controller="mathtutor">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <img src="images/apple.png" class="apple" ng-repeat="a in range(noOfApples) track by $index">
             </div>
-            <div class="col-lg-5">
+            <div class="col-md-5">
                 <div class="game-title">
                     <p class="text-center">{{gametitle}}</p>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <div class="pull-right reward-font">
                     <img src="images/chocolate.png" class="apple">
                     <span>{{noOfIceCreams}}</span>
@@ -74,7 +74,7 @@
                     <p>Try again maybe....</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="reloadPage()">Close</button>
                     <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="reloadPage()">Try Again</button>
                 </div>
             </div>
