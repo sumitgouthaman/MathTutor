@@ -3,18 +3,19 @@ body {
     /*    background-color: #B6D7F2;*/
     background-image: url("../images/background.jpg");
     background-size: cover;
+    background-attachment:fixed;
 }
 .reward-font {
     font-family: 'Handlee', cursive;
     font-size: 40px;
     color: #B5022F;
-    font-weight:bold;
+    font-weight: bold;
 }
 .game-title {
     font-family: 'Handlee', cursive;
     font-size: 45px;
     color: white;
-    font-weight:bold;
+    font-weight: bold;
 }
 .question {
     font-family: 'Handlee', cursive;
@@ -24,6 +25,9 @@ body {
 .apple {
     width: 50px;
     height: 50px;
+}
+.apple-lives {
+    margin-right: 5px;
 }
 .blackboard {
     /*    background-color:#1F631F;*/
@@ -46,4 +50,33 @@ body {
 }
 .answer-row {
     padding-top: 10px;
+}
+@media (max-width: 768px) {
+    .apple {
+        width: 25px;
+        height: 25px;
+    }
+    .game-title {
+        font-family: 'Handlee', cursive;
+        font-size: 23px;
+        color: black;
+        font-weight: bold;
+    }
+    .reward-font {
+        font-family: 'Handlee', cursive;
+        font-size: 23px;
+        color: #B5022F;
+        font-weight: bold;
+    }
+    .blackboard {
+        border-width: 5px;
+        border-radius: 7px;
+        margin-top: 10px;
+    }
+    .question {
+        font-size: 5em;
+    }
+}
+.full-width {
+    width: 90%;
 }
