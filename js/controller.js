@@ -1,5 +1,6 @@
 function mathtutor($scope) {
     $scope.gametitle="MathTutor";
+    $scope.maxNumber = 21;
     $scope.reloadPage = function () {
         $scope.noOfApples = 3;
         $scope.noOfIceCreams = 0;
@@ -7,13 +8,17 @@ function mathtutor($scope) {
     }
 
     $scope.getNewQuestion = function () {
-        var n1 = Math.floor(Math.random() * 101);
-        var n2 = Math.floor(Math.random() * 101);
+        var n1 = Math.floor(Math.random() * $scope.maxNumber);
+        var n2 = Math.floor(Math.random() * $scope.maxNumber);
         $scope.question = n1 + " + " + n2;
         $scope.answer = n1 + n2;
         $scope.userAnswer = "";
     }
-
+    $scope.onVoiceAnswer = function(){
+        if ($scope.userAnswer && parseInt($scope.userAnswer) == $scope.answer) {
+            $scope.onRightAnswer();
+        }
+    }
     $scope.onSubmitAnswer = function () {
         if ($scope.userAnswer && parseInt($scope.userAnswer) == $scope.answer) {
             $scope.onRightAnswer();

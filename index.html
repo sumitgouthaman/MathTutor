@@ -48,10 +48,13 @@
                 <div class="col-lg-1">
                 </div>
                 <div class="col-lg-8">
-                    <input type="text" class="form-control" id="answer" placeholder="Answer here!!!!" ng-model="userAnswer">
+                    <input type="text" class="form-control" id="answer" placeholder="Answer here!!!!" ng-model="userAnswer" x-webkit-speech onwebkitspeechchange="onVoiceAnswer()">
                 </div>
                 <div class="col-lg-1">
                     <button class="btn btn-primary" ng-click="onSubmitAnswer()" id="submitbutton">Submit</button>
+                </div>
+                <div class="hidden">
+                    <button class="btn btn-primary" ng-click="onVoiceAnswer()" id="voicesubmitbutton">Voice Submit</button>
                 </div>
                 <div class="col-lg-1">
                     <button class="btn btn-danger" ng-click="skipQuestion()">Skip</button>
@@ -89,6 +92,9 @@
                 $("#submitbutton").click();
             }
         });
+        function onVoiceAnswer(){
+            $('#voicesubmitbutton').click();
+        }
     </script>
 </body>
 
