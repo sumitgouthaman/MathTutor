@@ -44,6 +44,14 @@
         <div class="container">
             <div class="panel panel-default blackboard-outer">
                 <div class="panel-body blackboard">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="images/orange.png" class="counting-object" ng-repeat="n in range(n1) track by $index">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="images/orange.png" class="counting-object pull-right" ng-repeat="n in range(n2) track by $index">
+                        </div>
+                    </div>
                     <p class="question text-center">{{question}}</p>
                 </div>
             </div>
@@ -97,7 +105,8 @@
                 $("#submitbutton").click();
             }
         });
-        function onVoiceAnswer(){
+
+        function onVoiceAnswer() {
             $('#voicesubmitbutton').click();
         }
     </script>
