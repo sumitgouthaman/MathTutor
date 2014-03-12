@@ -3,5 +3,5 @@ MathTutor [For Kids]
 A simle browser based math game for small kids.  
 Implemented as part of coursework for HCI.  
 Built using Angular.js.  
-###To Run:  
-Just open index.html
+####Demo:  
+A live demo can be found [here](http://sumitgouthaman.github.io/MathTutor/)  
